@@ -2,25 +2,6 @@ name: CI
 on: [push]
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.14]
-    steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm ci
-      - name: Upload node_modules
-        uses: actions/upload-artifact@v1
-        with:
-          name: node_modules
-          path: node_modules
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -34,11 +15,33 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Download node_modules
-        uses: actions/download-artifact@v1
-        with:
-          name: node_modules
+      - name: Install dependencies
+        run: npm ci
       - name: Install global dependencies
         run: npm install -g typescript tslint
       - name: Run Test script
         run: npm run test
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.14]
+    needs: test
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Install global dependencies
+        run: npm install -g typescript tslint
+      - name: Build the application
+        run: npm run build:prod
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+          with:
+            name: build
+            path: build
