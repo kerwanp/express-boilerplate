@@ -126,6 +126,6 @@ userRouter.get('/me', (req, res) => {
 });
 ```
 
-### Dotenv
+#### Dotenv
 You can manage the configuration of your application by adding or editing the `src/.env` file. 
 Then, simply use them as environment variables `process.env.DB_HOST`.
