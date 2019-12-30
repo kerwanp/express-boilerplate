@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/kerwanp/express-starter.git"
   },
-  "author": "",
+  "author": "Martin PAUCOT <contact@martin-paucot.fr>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kerwanp/express-starter/issues"
