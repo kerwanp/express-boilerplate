@@ -1,15 +1,12 @@
 <div align="center">
+    <h1>
+        Express Starter
+    </h1>
     <img alt="CI Badge" src="https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg">
     <img alt="Deps Badge" src="https://david-dm.org/kerwanp/express-starter.svg">
-    
-     **A simple base application to begin an Express & Typescript project**
-
+    <br/>
+    <b>A simple application to begin an Express & Typescript project</b>
 </div>
-
-# Express Starter
-
-This project is a simple node app running with Express and Typescript.
-It provides a base application with useful tools and folder architecture.
 
 ## Setup
 
