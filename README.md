@@ -1,3 +1,5 @@
+![CI Badge](https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg)
+
 # Express Typescript Boilerplate
 
 This project provide a Node application running with Express, Webpack and Typescript.
