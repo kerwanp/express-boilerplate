@@ -1,9 +1,9 @@
-<center>
-    [![CI Badge](https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg)]
-    [![Deps badge](https://david-dm.org/kerwanp/express-starter.svg)]
-    
+<div align="center">
     **A simple base application to begin an Express & Typescript project**
-</center>
+
+    ![CI Badge](https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg)
+    ![Deps badge](https://david-dm.org/kerwanp/express-starter.svg)
+</div>
 
 # Express Starter
 
