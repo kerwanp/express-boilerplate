@@ -2,12 +2,12 @@ name: CI
 on: [push]
 
 jobs:
-  test:
-    name: Test
+  build:
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.14]
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
@@ -18,6 +18,13 @@ jobs:
         run: npm install -g typescript tslint
       - name: Install dependencies
         run: npm ci
-      - run: npm run test
-        env:
-          CI: true
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.14]
+    needs: build
+    steps:
+      - name: Run Test script
+        run: npm run test
