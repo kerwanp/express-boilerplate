@@ -1,5 +1,5 @@
 import * as expressWinston from 'express-winston'
-import * as winston from "winston";
+import * as winston from 'winston'
 
 export const loggerMiddleware = expressWinston.logger({
     transports: [
@@ -12,4 +12,4 @@ export const loggerMiddleware = expressWinston.logger({
     meta: false,
     msg: 'HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms',
     colorize: true,
-});
+})

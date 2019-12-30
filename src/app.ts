@@ -1,16 +1,16 @@
-import * as express from 'express';
-import * as dotenv from 'dotenv';
+import { loadPostMiddleware, loadPreMiddleware } from '@middleware/middleware'
+import { loadRouters } from '@routers/routers'
+import * as dotenv from 'dotenv'
+import * as express from 'express'
 import * as winston from 'winston'
-import {loadRouters} from "@routers/routers";
-import {loadPostMiddleware, loadPreMiddleware} from "@middleware/middleware";
 
 export class App {
 
-    public readonly server: express.Express;
-    public readonly logger: winston.Logger;
+    public readonly server: express.Express
+    public readonly logger: winston.Logger
 
     constructor() {
-        dotenv.config({path: 'build/.env'});
+        dotenv.config({ path: 'build/.env'})
         this.logger = winston.createLogger({
             level: process.env.NODE_ENV === 'development' ? 'debug' : 'info',
             format: winston.format.combine(
@@ -18,14 +18,14 @@ export class App {
                 winston.format.simple()
             ),
             transports: [new winston.transports.Console()]
-        });
-        this.server = express();
+        })
+        this.server = express()
     }
 
     init() {
-        this.listen();
-        loadPreMiddleware(this.server);
-        loadRouters(this.server);
+        this.listen()
+        loadPreMiddleware(this.server)
+        loadRouters(this.server)
         loadPostMiddleware(this.server)
     }
 
@@ -36,5 +36,5 @@ export class App {
     }
 }
 
-export const app = new App();
-app.init();
+export const app = new App()
+app.init()
