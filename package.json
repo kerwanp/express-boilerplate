@@ -4,6 +4,7 @@
   "description": "",
   "main": "build/app.js",
   "scripts": {
+    "test": "tslint 'src/**/*.ts'",
     "build": "npm run build:dev",
     "build:dev": "NODE_ENV=development webpack",
     "build:prod": "NODE_ENV=production webpack",
