@@ -1,8 +1,9 @@
 <div align="center">
-    **A simple base application to begin an Express & Typescript project**
+    <img alt="CI Badge" src="https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg">
+    <img alt="Deps Badge" src="https://david-dm.org/kerwanp/express-starter.svg">
+    
+     **A simple base application to begin an Express & Typescript project**
 
-    ![CI Badge](https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg)
-    ![Deps badge](https://david-dm.org/kerwanp/express-starter.svg)
 </div>
 
 # Express Starter
