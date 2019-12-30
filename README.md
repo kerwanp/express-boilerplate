@@ -65,6 +65,10 @@ authRouter.get('/token', expressAsyncHandler(async (req, res) => {
 
 More information: https://www.npmjs.com/package/express-async-handler
 
+### Dotenv
+You can manage the configuration of your application by adding or editing the `src/.env` file. 
+Then, simply use them as environment variables `process.env.DB_HOST`.
+
 ### File structure
 
 #### Routers
@@ -144,7 +148,3 @@ userRouter.get('/me', (req, res) => {
     )
 });
 ```
-
-#### Dotenv
-You can manage the configuration of your application by adding or editing the `src/.env` file. 
-Then, simply use them as environment variables `process.env.DB_HOST`.
