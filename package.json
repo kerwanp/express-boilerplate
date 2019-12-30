@@ -1,7 +1,7 @@
 {
   "name": "express-starter",
   "version": "1.0.0",
-  "description": "This project is a started node application running with Express and Typescript.\nIt provides a base application with useful tools and folder architecture.",
+  "description": "This project is a simple node app running with Express and Typescript.\nIt provides a base application with useful tools and folder architecture.",
   "main": "build/app.js",
   "scripts": {
     "test": "tslint 'src/**/*.ts'",

@@ -2,7 +2,7 @@
 
 # Express Starter
 
-This project is a started node application running with Express and Typescript.
+This project is a simple node app running with Express and Typescript.
 It provides a base application with useful tools and folder architecture.
 
 ## Setup
