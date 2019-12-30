@@ -17,7 +17,8 @@
     <br/>
     <img src="https://img.shields.io/badge/made%20with-%E2%99%A5-red?style=for-the-badge">
     <br/>
-    <b>A simple application to begin an Express & Typescript project</b>
+    <br/>
+    <h3>A simple application to begin an Express & Typescript project</h3>
 </div>
 
 ## Setup
