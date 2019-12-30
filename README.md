@@ -2,8 +2,20 @@
     <h1>
         Express Starter
     </h1>
-    <img alt="CI Badge" src="https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg">
-    <img alt="Deps Badge" src="https://david-dm.org/kerwanp/express-starter.svg">
+    <a href="https://github.com/kerwanp/express-starter/actions">
+        <img alt="CI Badge" src="https://img.shields.io/github/workflow/status/kerwanp/express-starter/CI?style=for-the-badge">
+    </a>
+    <a href="https://github.com/kerwanp/express-starter/blob/master/LICENSE" title="dependencies status">
+        <img src="https://img.shields.io/github/license/kerwanp/express-starter?style=for-the-badge"/>
+    </a>
+    <a href="https://david-dm.org/kerwanp/express-starter">
+        <img src="https://img.shields.io/david/kerwanp/express-starter?style=for-the-badge">
+    </a>
+    <a href="https://david-dm.org/kerwanp/express-starter?type=dev">
+        <img src="https://img.shields.io/david/dev/kerwanp/express-starter?style=for-the-badge">
+    </a>
+    <br/>
+    <img src="https://img.shields.io/badge/made%20with-%E2%99%A5-red?style=for-the-badge">
     <br/>
     <b>A simple application to begin an Express & Typescript project</b>
 </div>
