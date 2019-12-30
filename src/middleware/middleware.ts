@@ -1,5 +1,5 @@
 import * as express from 'express'
-import {serviceMiddleware} from "../services/services";
+import {serviceMiddleware} from "@services/services";
 import {loggerMiddleware} from "./logger.middleware";
 import {dumbMiddleware} from "./dumb.middleware";
 

@@ -6,3 +6,10 @@ declare module 'express-serve-static-core' {
         storage: any
     }
 }
+
+declare module 'express' {
+    interface Request {
+        services: any,
+        storage: any
+    }
+}

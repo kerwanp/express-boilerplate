@@ -1,3 +1,5 @@
+const TsconfigPathsPlugin = require( "tsconfig-paths-webpack-plugin");
+
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -16,7 +18,8 @@ module.exports = {
         filename: 'app.js'
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
+        plugins: [new TsconfigPathsPlugin()]
     },
     module: {
         rules: [

@@ -39,7 +39,7 @@ Usage:
 import expressAsyncHandler = require("express-async-handler");
 
 authRouter.get('/token', expressAsyncHandler(async (req, res) => {
-    await req.services.authService.authenticate()
+    await req.services.authService.authenticate();
     res.send('Hello world')
 }));
 ```
@@ -79,7 +79,7 @@ Example:
 ```typescript
 // src/middleware/hello.middleware.ts
 export function helloMiddleware(req, res, next) {
-    console.log('HELLO WORLD !')
+    console.log('HELLO WORLD !');
     next()
 }
 ```

@@ -1,8 +1,8 @@
 import * as express from 'express';
 import * as dotenv from 'dotenv';
 import * as winston from 'winston'
-import {loadRouters} from "./routers/routers";
-import {loadPostMiddleware, loadPreMiddleware} from "./middleware/middleware";
+import {loadRouters} from "@routers/routers";
+import {loadPostMiddleware, loadPreMiddleware} from "@middleware/middleware";
 
 export class App {
 
