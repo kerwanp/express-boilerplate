@@ -1,8 +1,9 @@
 ![CI Badge](https://github.com/kerwanp/express-boilerplate/workflows/CI/badge.svg)
 
-# Express Typescript Boilerplate
+# Express Starter
 
-This project provide a Node application running with Express, Webpack and Typescript.
+This project is a started node application running with Express and Typescript.
+It provides a base application with useful tools and folder architecture.
 
 ## Setup
 
