@@ -1,4 +1,3 @@
-import { serviceMiddleware } from '@services/services'
 import * as express from 'express'
 import { dumbMiddleware } from './dumb.middleware'
 import { loggerMiddleware } from './logger.middleware'
@@ -6,7 +5,6 @@ import { loggerMiddleware } from './logger.middleware'
 export function loadPreMiddleware(server: express.Express) {
     server.use(loggerMiddleware)
     server.use(dumbMiddleware)
-    server.use(serviceMiddleware)
 }
 
 export function loadPostMiddleware(server: express.Express) { }

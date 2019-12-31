@@ -1,1 +1,3 @@
-export class AuthService { }
+import { Service } from '@app/service-factory'
+
+export class AuthService extends Service { }

@@ -1,3 +1,4 @@
+import { ServiceFactory } from '@app/service-factory'
 import { loadPostMiddleware, loadPreMiddleware } from '@middleware/middleware'
 import { loadRouters } from '@routers/routers'
 import * as dotenv from 'dotenv'
@@ -24,6 +25,8 @@ export class App {
 
     init() {
         this.listen()
+        ServiceFactory.instantiateRuntimeServices()
+        this.server.use(ServiceFactory.serviceMiddleware)
         loadPreMiddleware(this.server)
         loadRouters(this.server)
         loadPostMiddleware(this.server)
