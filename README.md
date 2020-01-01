@@ -91,7 +91,7 @@ export function loadRouters(server) {
     server.use('/users', userRouter)
 }
 ```
-> We have now the route `POST /users/hello`
+> We have now the route `GET /users/hello`
 
 #### Middleware
 
@@ -117,34 +117,71 @@ export function loadPostMiddleware(server: express.Express) {
 #### Services
 
 Services are stored in the folder `src/services` with the name `*.service.ts`.
-Then you can instantiate it and store it in the request in the file `src/services/services.ts` with this way, you can pass arguments such as a header to the constructor.
+They must be named `NameService` and they are stored in the request `req.services.name`
+There is two types of services :
 
-Usage:
+**Request services**
+
+Every request, a new instance is created. You can store data and use the Request and the Response inside of it.
+
+Example:
 ```typescript
 // src/services/auth.service.ts
 export class AuthService {
-    private token;
-    constructor(token: string) {
-        this.token = token;
-    }
-    getUser() {}
-}
-``` 
-```typescript
-// src/services/services.ts
-export function serviceMiddleware(req: Request, res: Response, next: NextFunction) {
-    req.services.authService = new AuthService(
-        req.headers['Authorization']
-    );
-    next();
+  private token;
+  constructor(request: Request, response: Response) {
+    // As there is one instance by Request
+    // you can store data and use the request (& response)
+    // in your service.
+    this.token = request.headers['X-Authorization']
+  }
+  
+  async authenticate() { }
 }
 ```
+
 ```typescript
-// src/routers/auth.router.ts
-export const authRouter = express.Router();
-userRouter.get('/me', (req, res) => {
-    res.send(
-        req.services.authService.getUser()
-    )
-});
+// src/services/services.ts
+export const services = [
+  AuthService
+]
+```
+
+> By default, a service is a **request service**
+
+**Response Services**
+
+Sometime, you will need services which needs to be singleton and have only on instance of it.
+
+Example:
+```typescript
+// src/services/discord.service.ts
+@RuntimeService()
+export class DiscordService {
+  private client;
+  constructor() {
+    this.client = new Discord.Client()
+    this.client.login()
+  }
+  
+  getUserData() { }
+}
+```
+
+```typescript
+export const services = [
+  AuthService,
+  DiscordService
+]
+```
+
+
+You can now use theses services inside your routes:
+```typescript
+ authRouter.get('/users/me', (req, res) => {
+   await req.services.auth.authenticate()
+   return res.send(
+     req.services.discord.getUserData()
+   )
+ })
 ```
